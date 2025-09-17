@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>生日快乐!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, pink, #fda085);
+      font-family: "Arial", sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 60px;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 24px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(to right, #ff5fcace, #feb47b);
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    a {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 24px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet); /* 彩色渐变 */
+        -webkit-background-clip: text;    /* 文字裁剪背景 */
+        -webkit-text-fill-color: transparent; /* 文字透明显示背景 */
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.2s;
+        margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 生日快乐!</h1>
+  <p>祝你天天开心，心想事成！</p>
+
+  <!-- 播放音乐按钮 -->
+  <button id="play-music">播放</button>
+
+  <!-- 音频文件 -->
+  <audio id="birthday-music" src="birthday.mp3" preload="auto"></audio>
+
+  <!-- 跳转链接 -->
+  <a href="sup.html">点击有惊喜</a>
+
+  <script>
+    const btn = document.getElementById("play-music");
+    const music = document.getElementById("birthday-music");
+
+    btn.addEventListener("click", () => {
+      if (music.paused) {
+        music.play();
+        btn.textContent = "暂停";
+      } else {
+        music.pause();
+        btn.textContent = "播放";
+      }
+    });
+  </script>
+
+</body>
+</html>
